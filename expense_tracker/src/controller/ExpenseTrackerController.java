@@ -66,5 +66,17 @@ public class ExpenseTrackerController {
     }
     view.displayFilteredTransactions(filteredTransactions);
   }
+
+  public void removeSelectedTransaction() {
+    int selectedIndex = view.getSelectedRowIndex();
+
+    if (selectedIndex == -1) {
+        JOptionPane.showMessageDialog(null, "Please select a row to remove.");
+        return;
+    }
+
+    model.removeTransaction(selectedIndex);
+    refresh(); // update both table and total cost
+  }
     
 }

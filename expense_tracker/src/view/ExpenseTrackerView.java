@@ -24,6 +24,9 @@ public class ExpenseTrackerView extends JFrame {
   private JButton amountFilterBtn;
 
   private JButton clearFilterBtn;
+  // UI for remove button
+  private JButton removeButton;
+
     
   private List<Transaction> displayedTransactions = new ArrayList<>(); // ✅ Moved here
 
@@ -54,6 +57,8 @@ public class ExpenseTrackerView extends JFrame {
     amountFilterBtn = new JButton("Filter by Amount");
 
     clearFilterBtn = new JButton("Clear Filter");
+    // remove button init
+    removeButton = new JButton("Remove");
     
     JPanel inputPanel = new JPanel();
     inputPanel.add(amountLabel);
@@ -66,6 +71,8 @@ public class ExpenseTrackerView extends JFrame {
     buttonPanel.add(amountFilterBtn);
     buttonPanel.add(categoryFilterBtn);
     buttonPanel.add(clearFilterBtn);
+    // add remove button to panel
+    buttonPanel.add(removeButton);
     
     add(inputPanel, BorderLayout.NORTH);
     add(new JScrollPane(transactionsTable), BorderLayout.CENTER); 
@@ -182,5 +189,12 @@ public class ExpenseTrackerView extends JFrame {
   //     transactionsTable.repaint();
   // }
 
+  // add function to get the index of the row selected
+  public int getSelectedRowIndex() {
+    return transactionsTable.getSelectedRow();
+  }
 
+  public void addRemoveListener(ActionListener listener) {
+    removeButton.addActionListener(listener);
+  }
 }

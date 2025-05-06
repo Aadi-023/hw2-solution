@@ -74,6 +74,10 @@ public class ExpenseTrackerApp {
      controller.setFilter(null);
      controller.applyFilter();
    });
+
+   view.addRemoveListener(e -> {
+    controller.removeSelectedTransaction();
+   });
     
   }
 }

@@ -25,9 +25,27 @@ public class ExpenseTrackerModel {
     transactions.remove(t);
   }
 
+  // since we'll be removing the transaction clicked based on row index
+  public void removeTransaction(int index) {
+    if (index >= 0 && index < transactions.size()) {
+        transactions.remove(index);
+    }
+  }
+
+
   public List<Transaction> getTransactions() {
     //encapsulation - data integrity
     return Collections.unmodifiableList(new ArrayList<>(transactions));
   }
+
+  // calculate total cost after removing
+  public double calculateTotalCost() {
+    double total = 0.0;
+    for (Transaction t : transactions) {
+        total += t.getAmount();
+    }
+    return total;
+}
+
 
 }
