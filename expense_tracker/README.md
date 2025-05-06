@@ -21,3 +21,6 @@ This code is compiled with ```openjdk 17.0.7 2023-04-18```. Please update your J
 - Filter the transaction list by either amount or category: First specify the amount or category to be matched. Then click the corresponding Filter button. Highlights the matching transactions in the list.
 - Click clear filter to remove the filter and return to the all transaction view
 - Remove a transaction: Select a transaction from the table. Then click on the Remove button. The selected transaction is deleted from the table, and the total cost is updated accordingly
+
+## Test
+- To run all tests, run 'ant test' in the root of the project

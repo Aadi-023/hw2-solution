@@ -210,4 +210,31 @@ public class TestExample {
 	    assertEquals(categoryToFilterBy, currDisplayedTransaction.getCategory());
 	}
     }
+
+    @Test
+    public void removeTransactionNotInList(){
+        assertEquals(0, model.getTransactions().size());
+    
+        // Perform the action: Add and remove a transaction
+	    double amount = 50.0;
+	    String category = CATEGORY_FOOD;
+        Transaction addedTransaction = new Transaction(amount, category);
+        model.addTransaction(addedTransaction);
+    
+        // Pre-condition: List of transactions contains only
+	    //                the added transaction
+        assertEquals(1, model.getTransactions().size());
+	    Transaction firstTransaction = model.getTransactions().get(0);
+	    checkTransaction(amount, category, firstTransaction);
+
+	    assertEquals(amount, getTotalCost(), 0.01);
+
+        // make new txn with same values but different reference
+        Transaction transactionNotInList = new Transaction(amount, category);
+        model.removeTransaction(transactionNotInList);
+
+        // list size and total cost remain same
+        assertEquals(1, model.getTransactions().size());
+        assertEquals(amount, getTotalCost(), 0.01);
+    }
 }
