@@ -1,3 +1,28 @@
+commit 9158ad7fc40f269c67cc1311ba6f6d9db5eedc4b
+Author: Shaunak2003 <shaunak.karmarkar@gmail.com>
+Date:   Tue May 6 13:19:37 2025 -0400
+
+    Tested invalid removal
+    
+    Added new test case to test suite to test removal of txn not in the list
+    Passes all test cases
+    Updated README.md to reflect running of test cases
+
+commit 0344a8ac6fbf85683261802d7e4405b6f844fe9f
+Author: Shaunak2003 <shaunak.karmarkar@gmail.com>
+Date:   Tue May 6 12:55:34 2025 -0400
+
+    Implemented Undo functionality
+    
+    Added Remove button to remove transactions from table
+    When txn is removed, automatically update the Table view, and update total cost
+
+commit 3a37a86c06b6e04ff28653877ac878d761c1aaf6
+Author: Aadii <adeshmukh@umass.edu>
+Date:   Mon May 5 14:00:58 2025 -0400
+
+    Create gitlog.txt
+
 commit b9d1fd4b0543f4161a0d171e6681fe79563f9c7f
 Author: Aadii <adeshmukh@umass.edu>
 Date:   Mon May 5 13:56:30 2025 -0400

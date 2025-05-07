@@ -26,7 +26,7 @@ public class ExpenseTrackerModel {
   }
 
   // since we'll be removing the transaction clicked based on row index
-  public void removeTransaction(int index) {
+  public void removeTransactionAtIndex(int index) {
     if (index >= 0 && index < transactions.size()) {
         transactions.remove(index);
     }

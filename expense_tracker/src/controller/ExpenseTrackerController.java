@@ -75,7 +75,7 @@ public class ExpenseTrackerController {
         return;
     }
 
-    model.removeTransaction(selectedIndex);
+    model.removeTransactionAtIndex(selectedIndex);
     refresh(); // update both table and total cost
   }
     
